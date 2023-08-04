@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&family=Ubuntu&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --blanco: #fff;
+    --negro: #222;
+    --color1: #f81;
+    --color2: #a9f;
+    --color3: #f8d;
+}
+.grid__container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 80px 50vh 100% 10%;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "section aside"
+    "footer footer";
+}
+header {
+    grid-area: header;
+    background-color: cornflowerblue;
+}
+.U__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: var(--color1);
+    height: 30px;
+    width: 30px;
+    margin: .3rem;
+}
+.logo {
+    display: flex;
+}
+main {
+    grid-area: main;
+    background-color: red;
+}
+section {
+    grid-area: section;
+    background-color: lime;
+}
+aside {
+    grid-area: aside;
+    background-color: crimson;
+}
+footer {
+    grid-area: footer;
+    background-color: gray;
+}
+@media (max-width:768px) {
+    .grid__container {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 50vh 100% 100% 10%;
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "section section"
+        "aside aside"
+        "footer footer";
+    }
+}
