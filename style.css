@@ -52,24 +52,57 @@ header {
     margin-right: 1em;
     font-family: 'Raleway';
 }
+.nav__burger {
+    display: none;
+}
 .ul__items {
     display: inline-block;
     list-style: none;
 }
 .a_item {
-    padding: .3rem;
+    padding: .2rem;
     color: var(--negro);
     text-decoration: none;
-    border: 2px solid var(--color4);
-    border-radius: 3px;
-}
-.a_item {
-    line-height: 10px;
-    padding: 6px 8px;
+    background-color: var(--blancooscuro);
     transition: .2s ease;
 }
-.a_item:hover {
+.a_item:hover, .a_item:active, .a_item:focus {
+    color: var(--color4);
+}
+.a_item i {
+    padding-left: .3rem;
+    font-size: .8rem;
+}
+.menu {
+    list-style: none;
+}
+.menu > li > a{
+    display: block;
+    padding: 15px 31px;
+    color: var(--negro);
+}
+.menu__vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 7.9em;
+    background-color: #0005;
+}
+.menu li:hover .menu__vertical {
+    display: block;
+}
+.menu__vertical li {
+    transition: all 150ms ease;
+}
+.menu__vertical li:hover {
     background-color: var(--color4);
+} 
+.menu__vertical li a {
+    transition: all .5s ease;
+    display: block;
+    color: white;
+    padding: 10px 15px 10px;
+    text-decoration: none;
 }
 .toggle {
     color: var(--negro);
@@ -196,6 +229,9 @@ footer {
         header {
             height: 60px;
         }
+        .nav__burger {
+            display: block;
+        }
         .nav__ul {
             display: flex;
             flex-direction: column;
@@ -219,6 +255,7 @@ footer {
             padding: .3rem;
             color: var(--negro);
             text-decoration: none;
+            background-color: var(--color4);
             border: transparent;
         }
         .a_item {
@@ -230,11 +267,15 @@ footer {
         .a_item:active,     
         .a_item:focus {
             background-color: var(--blanco );
+            color: var(--negro);
         }
         .toggle {
             display: inline-block;
             margin-right: 1rem;
             cursor: pointer;
+        }
+        .nav__deplegable {
+            display: none;
         }
         .nav__ul--visible {
             left: 0;
