@@ -7,6 +7,7 @@
 }
 :root {
 	--blanco: #fff;
+    --blancooscuro: #f8f8f8;
 	--negro: #222;
 	--color1: #000000;
 	--color2: #3D0000;
@@ -15,7 +16,8 @@
 }
 @media (prefers-color-scheme: dark){
     :root {
-        --blanco: #222;
+        --blanco: #232323;
+        --blancooscuro: #292929;
         --negro: #dfdfdf;
         --color1: #420516;
         --color2: #7D1935;
@@ -26,13 +28,14 @@
 .grid__container {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
-	grid-template-rows: 80px 50vh 100% 10%;
+	grid-template-rows: 80px 50vh 90% 10%;
 	grid-template-areas:
 		'header header'
 		'main main'
 		'section aside'
 		'footer footer';
 }
+/*Encabezado*/
 header {
 	grid-area: header;
 	background-color: var(--blanco);
@@ -102,17 +105,77 @@ header h2 {
     text-transform: uppercase;
     font-weight: 600;
 }
-main {
+/*Inicio*/
+.main {
 	grid-area: main;
-	background-color: var(--color1);
+	background: url("https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVzYXJyb2xsbyUyMHdlYnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    z-index: -2;
 }
+.main__container--1 {
+    color: var(--negro);
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    backdrop-filter: blur(3px) saturate(1.5);
+    z-index: -1;
+}
+.main__container--1 h2{
+    margin-left: .4em;
+    font-size: 2.5rem;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+.main__container--1 p{
+    margin-left: 1em;
+    font-family: 'Poppins';
+}
+.main__container--2 {
+    height: 100%;
+    width: 50%;
+    filter: saturate(0.5px);
+}
+.main__container--2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/*Contenido*/
 section {
 	grid-area: section;
-	background-color: var(--color2);
+	background-color: var(--blanco);
+    padding: 1.5em 2.5em;
+}
+section h3 {
+    font-size: 1.3rem;
+    color: var(--negro);
+    font-family: 'Poppins';
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--color4);
+    padding: .2em 0em;
+    margin: 1em 0em;
+}
+section img {
+    height: max-content;
+    width: 100%;
+    margin-bottom: 1em;
+}
+section p {
+    color: var(--negro);
+    font-weight: lighter;
+    font-size: 1rem;
+    font-family: 'Poppins';
 }
 aside {
 	grid-area: aside;
-	background-color: var(--color3);
+	background-color: var(--blancooscuro);
+    z-index: -1;
 }
 footer {
 	grid-area: footer;
