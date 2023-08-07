@@ -9,26 +9,26 @@
 	--blanco: #fff;
     --blancooscuro: #f8f8f8;
 	--negro: #222;
-	--color1: #000000;
-	--color2: #3D0000;
-	--color3: #950101;
-	--color4: #FF0000;
+    --color1: #121730;
+    --color2: #224071;
+    --color3: #4670bf;
+    --color4: #6da0e4;
 }
 @media (prefers-color-scheme: dark){
     :root {
         --blanco: #232323;
         --blancooscuro: #292929;
         --negro: #dfdfdf;
-        --color1: #420516;
-        --color2: #7D1935;
-        --color3: #B42B51;
-        --color4: #E63E6D;
+        --color1: #122d44;
+        --color2: #124f79;
+        --color3: #1a7cb4;
+        --color4: #20b1d8;
     }
 }
 .grid__container {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
-	grid-template-rows: 80px 50vh 90% 10%;
+	grid-template-rows: 60px 50vh 1fr 8%;
 	grid-template-areas:
 		'header header'
 		'main main'
@@ -40,7 +40,7 @@ header {
 	grid-area: header;
 	background-color: var(--blanco);
     width: 100%;
-    height: 80px;
+    height: 60px;
     position: fixed;
     top: 0; left: 0;
     display: flex;
@@ -63,10 +63,10 @@ header {
     padding: .2rem;
     color: var(--negro);
     text-decoration: none;
-    background-color: var(--blancooscuro);
     transition: .2s ease;
 }
 .a_item:hover, .a_item:active, .a_item:focus {
+    background-color: var(--blancooscuro);
     color: var(--color4);
 }
 .a_item i {
@@ -78,7 +78,7 @@ header {
 }
 .menu > li > a{
     display: block;
-    padding: 15px 31px;
+    padding: 17px 31px;
     color: var(--negro);
 }
 .menu__vertical {
@@ -163,10 +163,12 @@ header h2 {
     font-size: 2.5rem;
     font-family: 'Poppins';
     text-transform: uppercase;
+    color: #fff;
 }
 .main__container--1 p{
     margin-left: 1em;
     font-family: 'Poppins';
+    color: #fff;
 }
 .main__container--2 {
     height: 100%;
@@ -183,6 +185,7 @@ section {
 	grid-area: section;
 	background-color: var(--blanco);
     padding: 1.5em 2.5em;
+    height: 100%;
 }
 section h3 {
     font-size: 1.3rem;
@@ -205,20 +208,155 @@ section p {
     font-size: 1rem;
     font-family: 'Poppins';
 }
+/*Lateral*/
 aside {
 	grid-area: aside;
 	background-color: var(--blancooscuro);
-    z-index: -1;
+    padding: 1rem .5rem;
+    color: var(--negro);
+    font-family: 'Ubuntu',monospace;
 }
+.more__content {
+    margin: .3em 0em;
+    background-color: var(--blanco);
+    height: max-content;
+    padding: .3rem;
+}
+.more__item {
+    height: 150px;
+    width: 100%;
+    background-color: var(--negro);
+    margin: .5em 0em;
+}
+.tag__content li {
+    margin: .5em 0em;
+    padding: .5rem;
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+.tag__content i {
+    padding: 0rem .3rem;
+}
+.tag:hover{
+    background-color: var(--color3);
+}
+/*Pie de pagina*/
 footer {
 	grid-area: footer;
+	background-color: var(--color1);
+}
+.logo-2 {
+    display: flex;
+    justify-content: center;
+    margin: .5em 0em;
+}
+.logo-2 h4 {
+    color: #fff;
+    font-size: 1.4rem;
+}
+.U__icon-2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--negro);
 	background-color: var(--color4);
+	height: 30px;
+	width: 30px;
+	margin: 0.3rem;
+}
+.sobre__mi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sobre__mi h5{
+    color: var(--color4);
+    font-size: 1rem;
+    font-family: 'Poppins',sans-serif;
+    letter-spacing: 1px;
+}
+.contacs {
+    width: 45%;
+    height: 100%;
+    margin: 0em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.redes {
+    width: 45%;
+    height: 100%;
+    margin: 0em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.icons button {
+    background-color: var(--blanco);
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: .5em 0em;
+}
+.icons i {
+    color: var(--negro);
+    font-size: 1rem;
+}
+.icon-1:hover,.icon-1:active{
+    background-color: #292929;
+}
+.icon-1:hover > i,.icon-1:active > i {
+    color: #fff;
+}
+.icon-2:hover,.icon-2:active{
+    background-color: #0075b5;
+}
+.icon-2:hover > i ,.icon-2:active > i {
+    color: #fff;
+}
+.icon-3:hover,.icon-3:active{
+    background-image: linear-gradient(45deg,var(--color4),var(--color3));
+}
+.icon-3:hover > i ,.icon-3:active > i {
+    color: #fff;
+}
+.icon-4:hover,.icon-4:active{
+    background-image: linear-gradient(190deg, #00ffff 0, #21e0ff 25%, #3cb5f2 50%, #408cbb 75%, #3b6788 100%);
+}
+.icon-4:hover > i ,.icon-4:active > i {
+    color: #fff;
+}
+.icon-5:hover,.icon-5:active{
+    background-image: linear-gradient(195deg, #ff7b8f 0, #ff6d9f 8.33%, #ff61ab 16.67%, #ff55b4 25%, #ff4cb9 33.33%, #ff43b9 41.67%, #f23cb5 50%, #ce36ae 58.33%, #ac34a7 66.67%, #8e32a1 75%, #72329c 83.33%, #563397 91.67%, #393495 100%);
+}
+.icon-5:hover > i ,.icon-5:active > i {
+    color: #fff;
+}
+.icon-6:hover,.icon-6:active{
+    background-image: radial-gradient(circle at 90.56% -7.92%, #ff9348 0, #ff8649 12.5%, #ff7447 25%, #ff5d43 37.5%, #f23c3c 50%, #e30037 62.5%, #d80037 75%, #cf003a 87.5%, #c90041 100%);
+}
+.icon-6:hover > i ,.icon-6:active > i {
+    color: #fff;
+}
+.icon-7:hover,.icon-7:active{
+    background-image: radial-gradient(circle at 68.3% -18.3%, #ff65b3 0, #ff59c0 10%, #ff4ecd 20%, #ff45d9 30%, #ff3fe6 40%, #f23cf2 50%, #d33ffe 60%, #ad46ff 70%, #7b4fff 80%, #0058ff 90%, #0060ff 100%);
+}
+.icon-7:hover > i ,.icon-7:active > i {
+    color: #fff;
 }
 @media (max-width: 768px) {
 	.grid__container {
 		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 60px 50vh 100% 100% 10%;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 60px 50vh 5fr 3fr 8%;
 		grid-template-areas:
 			'header header'
 			'main main'
@@ -279,6 +417,26 @@ footer {
         }
         .nav__ul--visible {
             left: 0;
+        }
+        /*Inicio*/
+        .main__container--1 {
+            width: 100%;
+            backdrop-filter: blur(3px) saturate(1.5);
+        }
+        /*Pie*/
+        .sobre__mi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .contacs {
+            width: 90%;
+            margin: 1em 0em;
+        }
+        .redes {
+            width: 90%;
+            margin: 1em 0em;
         }
 }
 
